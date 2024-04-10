@@ -5,3 +5,5 @@ console.log(window.document)
 //imp: window.document == document. both generate same output.
 console.dir(document)
 //output: will display the hidden properties too.
+console.log(document.baseURI)
+console.log(document.links);
