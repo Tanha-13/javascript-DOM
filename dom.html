@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Learning</title>
-</head>
-<body>
+  </head>
+  <body style="margin: 0; padding: 0;">
     <div class="bg-black">
-        <h1 class="heading" id="heading">DOM learning on Chai aur Code</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, voluptatem sunt. Necessitatibus laboriosam accusantium velit reiciendis reprehenderit molestias corporis minima!</p>
+      <h1 class="heading" id="title">DOM learning on Chai aur Code <span style="display: none;">Test Text</span></h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, voluptatem
+        sunt. Necessitatibus laboriosam accusantium velit reiciendis
+        reprehenderit molestias corporis minima!
+      </p>
     </div>
-
-
     <script>
-        document.getElementById('heading').innerHTML = 'Hello World from chai aur code'
+      const headingTitle = document.getElementById("title");
+      // console.log(headingTitle);
+      // console.log(headingTitle.id); //title
+      // console.log(headingTitle.className); // heading.
+      // console.log(headingTitle.getAttribute("id")); //title
+      // console.log(headingTitle.setAttribute('class','test heading')); //undefined
+      // console.log(headingTitle.className);  //test, heading
+
+      //single style
+      headingTitle.style.backgroundColor = 'darkgreen';
+      //multiple style
+      headingTitle.style = "background-color: darkgreen ; color:white ; padding: 15px ; border-radius: 5px; margin: 5px";
+
+      //to extract content
+      console.log(headingTitle.textContent); // DOM learning on Chai aur Code Test Text.
+      console.log(headingTitle.innerText); // DOM learning on Chai aur Code
+      console.log(headingTitle.innerHTML); // DOM learning on Chai aur Code <span style ="display: none;">Test Text </span>
     </script>
-</body>
+  </body>
 </html>
+
