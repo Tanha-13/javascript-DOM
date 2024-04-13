@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Learning</title>
   </head>
-  <body style="margin: 0; padding: 0;">
+  <body style="margin: 0; padding: 0">
     <div class="bg-black">
-      <h1 class="heading" id="title">DOM learning on Chai aur Code <span style="display: none;">Test Text</span></h1>
+      <h1 class="heading" id="title">
+        DOM learning on Chai aur Code
+        <span style="display: none">Test Text</span>
+      </h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Lorem ipsum dolor sit amet.</h2>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, voluptatem
         sunt. Necessitatibus laboriosam accusantium velit reiciendis
         reprehenderit molestias corporis minima!
       </p>
+
+      <input type="text" name="" id="">
+      <input type="password" name="" id="">
+
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
     </div>
     <script>
       const headingTitle = document.getElementById("title");
@@ -24,15 +39,32 @@
       // console.log(headingTitle.className);  //test, heading
 
       //single style
-      headingTitle.style.backgroundColor = 'darkgreen';
+      headingTitle.style.backgroundColor = "darkgreen";
       //multiple style
-      headingTitle.style = "background-color: darkgreen ; color:white ; padding: 15px ; border-radius: 5px; margin: 5px";
+      headingTitle.style =
+        "background-color: darkgreen ; color:white ; padding: 15px ; border-radius: 5px; margin: 5px";
 
       //to extract content
-      console.log(headingTitle.textContent); // DOM learning on Chai aur Code Test Text.
-      console.log(headingTitle.innerText); // DOM learning on Chai aur Code
-      console.log(headingTitle.innerHTML); // DOM learning on Chai aur Code <span style ="display: none;">Test Text </span>
+      // console.log(headingTitle.textContent); // DOM learning on Chai aur Code Test Text.
+      // console.log(headingTitle.innerText); // DOM learning on Chai aur Code
+      // console.log(headingTitle.innerHTML); // DOM learning on Chai aur Code <span style ="display: none;">Test Text </span>
+
+      //querySelector
+      // console.log(document.querySelector("h2"));
+      //console.log(document.querySelector('#title'));
+      //console.log(document.querySelector('.heading'));
+      // console.log(document.querySelector('input[type="password"]'));
+
+      //first child of ul list.
+      const myUnorderedList = document.querySelector('ul');
+      const firstChildToGreen = myUnorderedList.querySelector('li');
+      firstChildToGreen.style.color ="green";
+      firstChildToGreen.style.fontSize = "30px";
+      firstChildToGreen.innerText = 'One';
+
+
+
+      
     </script>
   </body>
 </html>
-

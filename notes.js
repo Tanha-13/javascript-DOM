@@ -16,6 +16,8 @@
  * 04. //imp: document.getElementById('').textContent vd document.getElementById('').innerText : innerText provides the visible text/content whereas textContent returns hidden content.
  * 
  * 05. innerHTML: innerHTML provides the whole content including inner tags, styles.
+ * 
+ * 06. document.querySelector(''): to get element using class use dot(.) followed by the class name and to get element using id, use hash(#) followed by the id name. It supports all css selectors.
  */
 
 
