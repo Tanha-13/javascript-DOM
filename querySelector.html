@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors</title>
+</head>
+<body>
+    <h1>Document Object Model Selectors List</h1>
+    <ul>
+        <li class="list-item">1</li>
+        <li class="list-item">2</li>
+        <li class="list-item">3</li>
+        <li class="list-item">4</li>
+    </ul>
+
+
+    <script>
+        const tempLiList = document.querySelectorAll('li');
+        console.log(tempLiList); // nodeList
+        tempLiList.forEach((tempLi) => {
+            // tempLi.style = 'color: #fff; background-color: green; margin-bottom: 5px; padding: 5px;'
+        })
+
+        const selectorH1 = document.querySelectorAll('h1');
+        selectorH1[0].style = 'background-color:black; color:white';
+
+        const tempClassList = document.getElementsByClassName('list-item');
+        console.log(tempClassList); // HTMLCollection
+
+        //HTMLCollection to array
+        const tempClassListToArray = Array.from(tempClassList);
+        console.log(tempClassListToArray);
+        tempClassListToArray.forEach(function(classLi){
+            console.log(classLi);
+        })
+        
+
+    </script>
+</body>
+</html>

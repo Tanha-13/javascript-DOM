@@ -18,7 +18,18 @@
  * 05. innerHTML: innerHTML provides the whole content including inner tags, styles.
  * 
  * 06. document.querySelector(''): to get element using class use dot(.) followed by the class name and to get element using id, use hash(#) followed by the id name. It supports all css selectors.
+ * 
+ * 07. querySelector vs querySelectorAll: querySelector selects one element whereas querySelectorAll gives a nodeList[] with all the available elements. You can manipulate directly the element that is taken by querySelector. In querySelectorAll, you have access the element using index.
+ * 
+ * 07. nodeList vs HTMLCollection: they are not pure array list. In nodeList,  forEach is accessible but in HTMLCollection, there is no way to loop the collection.
  */
+
+//todo: 01. querySelector vs querySelectorAll 
+//todo: 02. querySelector vs getElementById. why using querySelector is preferable instead of getElementById
+//todo: 03. querySelectorAll vs getElementsByClassName
+//todo: 04. nodeList vs HTMLCollection
+//todo: 05. static nodeList vs live nodeList
+
 
 
 
