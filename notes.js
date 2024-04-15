@@ -31,5 +31,8 @@
 //todo: 05. static nodeList vs live nodeList
 
 
-
+// Creating new elements and node traversal
+/**
+ * 01. childNodes is a complex tree of DOM. line breaks is also part of child nodes. they are text nodes. Browser takes one line break at a time. 
+ */
 
