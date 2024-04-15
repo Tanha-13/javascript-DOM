@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Element</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // first step: creating a new element
+    const div = document.createElement('div');
+    console.log(div);
+
+    // setting the class and id or any other attribute and style
+    div.className = 'main';
+    //info: check notes.js
+    // div.className = 'hello';
+    // div.id = Math.round(Math.random() * 10 + 1);
+    div.id = "myId";
+    //custom attribute
+    div.setAttribute("title", "generated title");
+    div.style = 'background-color: darkgreen; padding:12px; color:#fff';
+
+    // set the text
+    // div.innerHTML = 'Chai aur Code';
+    const addText = document.createTextNode("Chai aur Code");
+    div.appendChild(addText);
+
+    // set the element
+    document.body.appendChild(div);
+</script>
+</html>

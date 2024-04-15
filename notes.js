@@ -34,5 +34,9 @@
 // Creating new elements and node traversal
 /**
  * 01. childNodes is a complex tree of DOM. line breaks is also part of child nodes. they are text nodes. Browser takes one line break at a time. 
+ * 
+ * 02. //info: className and id overrides existing value. First, it collects the existing value, then overrides. but setAttribute() method directly overrides the existing one. So it saves one round.
+ * 
+ * 03. innerText also does the same as className and id. use createTextNode instead of innerText.
  */
 
