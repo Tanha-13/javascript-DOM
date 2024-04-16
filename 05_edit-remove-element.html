@@ -9,32 +9,54 @@
     <ul class="language">
         <li>JavaScript</li>
     </ul>
-</body>
 
-<script>
 
-    // option one
-    function addLanguage(langName){
-        const li = document.createElement('li');
-        li.innerText = `${langName}`;
+    <script>
+
+        // option one: everytime it needs to traverse the document 
+        function addLanguage(langName){
+            const li = document.createElement('li');
+            li.innerHTML = `${langName}`;
+            document.querySelector('.language').appendChild(li);
+        }
+        addLanguage('Python');
+        addLanguage('TypeScript');
+    
+        //option two: optimized approach
+        function addOptiLanguage(langName){
+            const li = document.createElement('li');
+            // const liContext = document.createTextNode(`${langName}`);
+            // li.appendChild(liContext);
+            li.appendChild(document.createTextNode(`${langName}`));
+    
+            document.querySelector('.language').appendChild(li)
+            
+        }
+        addOptiLanguage('Go Programming');
+
+        //Editing
+        const secondLang = document.querySelector('li:nth-child(2)');
+        // console.log(secondLang);
+        // secondLang.innerHTML = 'Ruby'
+
+        //optimized approach
+        const newLi = document.createElement('li')
+        newLi.textContent = "Ruby";
+        secondLang.replaceWith(newLi);
         
-        document.querySelector('.language').appendChild(li);
-    }
-    addLanguage('Python');
-    addLanguage('TypeScript');
+        //outerHTML
+        const firstLang = document.querySelector('li:first-child');
+        // console.log(firstLang);
+        firstLang.outerHTML = `<li>C++</li>`;
 
-    //option two
-    function addOptiLanguage(langName){
-        const li = document.createElement('li');
-        // const liContext = document.createTextNode(`${langName}`);
-        // li.appendChild(liContext);
-        li.appendChild(document.createTextNode(`${langName}`));
+        //remove
+        const lastLang = document.querySelector('li:last-child');
+        lastLang.remove()
 
-        document.querySelector('.language').appendChild(li)
-        
-    }
-    addOptiLanguage('golang');
 
     
-</script>
+    </script>
+</body>
+
+
 </html>
