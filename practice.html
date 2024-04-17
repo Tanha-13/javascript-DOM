@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Practice DOM</title>
+</head>
+<body>
+    <h2>JavaScript HTML DOM</h2>
+    <p id="intro">Finding HTML Elements by Id</p>
+    <p>This example demonstrates the <b>getElementById</b> method</p>
+    <p id="demo"></p>
+
+
+    <script>
+        const targetElementText = document.getElementById('intro').innerHTML;
+        console.log(targetElementText);
+        document.getElementById('demo').innerHTML = `The text from the intro paragraph is: ${targetElementText}`;
+        console.log(document.getElementById('intros'));
+    </script>
+</body>
+</html>
