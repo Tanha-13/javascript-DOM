@@ -50,11 +50,17 @@
  * 
  */
 
-// todo: 01. querySelector vs querySelectorAll 
-//todo: 02. querySelector vs getElementById. why using querySelector is preferable instead of getElementById
-//todo: 03. querySelectorAll vs getElementsByClassName
-//todo: 04. nodeList vs HTMLCollection
-//todo: 05. static nodeList vs live nodeList
+/**
+ * todo: 01. querySelector vs querySelectorAll 
+ * todo: 02. querySelector vs getElementById. why using querySelector is preferable instead of getElementById
+ * todo: 03. querySelectorAll vs getElementsByClassName
+ * todo: 04. nodeList vs HTMLCollection
+ * todo: 05. static nodeList vs live nodeList
+ * todo: 06. children vs childNodes
+ * todo: 07. firstChild vs firstElementChild
+ * todo: 08. className vs classList
+ * todo: 09: replaceWith vs replaceChild vs replaceChildren
+ */
 
 
 // Creating new elements and node traversal

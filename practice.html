@@ -1,22 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W3Schools Practice DOM</title>
-</head>
-<body>
-    <h2>JavaScript HTML DOM</h2>
-    <p id="intro">Finding HTML Elements by Id</p>
-    <p>This example demonstrates the <b>getElementById</b> method</p>
-    <p id="demo"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
 
+    <style>
+      .new-element {
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        color: brown;
+        font-weight: bold;
+      }
+      .a{
+        font-size: 0px;
+        
+      }
+      .a > span{
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container"></div>
+
+    <!-- <div class="a">
+      <span class="b">Some Text</span>
+      Some Other, Redundant Text
+    </div> -->
+
+    <div class="daily-routine">
+
+    </div>
+    
 
     <script>
-        const targetElementText = document.getElementById('intro').innerHTML;
-        console.log(targetElementText);
-        document.getElementById('demo').innerHTML = `The text from the intro paragraph is: ${targetElementText}`;
-        console.log(document.getElementById('intros'));
+      // element where to insert new elements
+      const mainContainer = document.querySelector(".main-container");
+
+      //creating new elements
+      const newElement = document.createElement("h1");
+
+      //adding style or classes
+      newElement.classList.add("new-element");
+
+      //creating text nodes and appending it
+      //option -1 : optimized way
+      newElement.appendChild(document.createTextNode('Welcome Buddy'));
+
+      //option -2: using textContent
+    //   newElement.textContent = "Welcome Buddy";
+
+      //option -3: using innerText
+        // newElement.innerText = "Welcome Buddy";
+    
+        //option -4: using innerHTML
+        // newElement.innerHTML = `Welcome Buddy <em>Developer</em>`;
+
+      //finally appending the element to its parent
+      mainContainer.appendChild(newElement);
     </script>
-</body>
+    <script src="./practice.js"></script>
+  </body>
 </html>
