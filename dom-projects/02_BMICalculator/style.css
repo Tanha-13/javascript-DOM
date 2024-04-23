@@ -24,6 +24,11 @@ label{
     font-size: 20px;
     margin-bottom: 10px;
 }
+.result{
+    text-align: center;
+    font-size: 40px;
+    margin: 20px 0;
+}
 .btn{
     width: 100%;
     padding: 6px 0;
@@ -31,6 +36,7 @@ label{
     background-color: black;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .weight-guide{
