@@ -60,6 +60,7 @@
  * todo: 07. firstChild vs firstElementChild
  * todo: 08. className vs classList
  * todo: 09: replaceWith vs replaceChild vs replaceChildren
+ * todo: 10: toNumber() or parseInt()
  */
 
 
