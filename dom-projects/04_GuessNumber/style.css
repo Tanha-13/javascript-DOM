@@ -1,4 +1,38 @@
-body{
-    background-color: #212121;
-    color: #fff;
+*{
+    box-sizing: border-box;
 }
+.game-rules{
+    text-align: center;
+}
+.guess-container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 5px;
+}
+#guess{
+    font-size: 50px;
+    display: block;
+}
+.guessField{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.guessField::placeholder{
+    color: #808080;
+    font-weight: bold;
+}
+.submitButton{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
