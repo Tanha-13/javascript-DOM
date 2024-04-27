@@ -1,0 +1,19 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+}
+#clock{
+    background-color: #b89454;
+    padding: 20px 40px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.time{
+    font-size: 1.5rem;
+}
