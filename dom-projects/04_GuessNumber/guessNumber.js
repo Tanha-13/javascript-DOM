@@ -16,11 +16,11 @@ let remaining = document.querySelector(".lastResult");
 const displayResult = document.querySelector(".result");
 const resultContainer = document.querySelector(".resultParas");
 
-
 const p = document.createElement("p");
 
 //generating the random number
 let randomNumber = Math.floor(Math.random() * 100 + 1);
+let remainingGuess = 10;
 console.log(randomNumber);
 
 //collecting the guess number from the user input using click event in submit button
@@ -33,22 +33,21 @@ if (playGame) {
   });
 }
 
-let remainingGuess = parseInt(remaining.innerText);
 function validateGuess(guess) {
   if (isNaN(guess)) {
     return alert("Please provide a valid number");
   } else if (guess < 1 || guess > 100) {
     return alert("Please provide a number between 1 and 100");
   } else {
-    previousAndRemaining(guess);
     checkGuess(guess);
+    previousAndRemaining(guess);
   }
 }
 
 function checkGuess(guess) {
   if (guess === randomNumber) {
     displayMessage("You guessed it right.");
-    endGame();
+    return endGame();
   } else if (guess < randomNumber) {
     return displayMessage("Number is Low");
   } else if (guess > randomNumber) {
@@ -59,10 +58,13 @@ function checkGuess(guess) {
 function previousAndRemaining(guess) {
   guessField.value = "";
   preGuess.innerHTML += `${guess} `;
-  --remainingGuess;
+  remainingGuess--;
   remaining.innerHTML = `${remainingGuess}`;
 
-  if (remainingGuess === 0) {
+  //problem: if guess number is guessed in round 10, it updates. but it runs 11 times other time.
+  if (remainingGuess === -1) {
+    previousAndRemaining(guess);
+    displayMessage(`Game Over. Random Number was ${randomNumber}`);
     endGame();
   }
 }
@@ -96,16 +98,16 @@ function startGame() {
     guessField.removeAttribute("disabled");
     submit.removeAttribute("disabled");
     displayNone.forEach((element) => {
-        if (element.style.display === 'none') {
-            element.style.display = 'block';
-            
-          } else {
-            element.style.display = 'none';
-          }
+      if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
     });
-    remaining.innerHTML = '';
-    preGuess.innerHTML = '';
-    displayMessage('');
+    remainingGuess = 10;
+    remaining.innerHTML = `${remainingGuess}`;
+    preGuess.innerHTML = ``;
+    displayMessage("");
     playGame = true;
     resultContainer.removeChild(p);
   });
