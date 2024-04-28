@@ -13,3 +13,17 @@ const submit = document.querySelector("#submitButton");
 const preGuess = document.querySelector(".guesses");
 const remaining = document.querySelector(".lastResult");
 
+//generating the random number
+const randomNumber = Math.floor(Math.random() * 100 + 1);
+
+//collecting the guess number from the user input using click event in submit button
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    const guessNumber = parseInt(guessField.value);
+    validateGuess(guessNumber);
+})
+
+function validateGuess(guess){
+    
+    
+}
