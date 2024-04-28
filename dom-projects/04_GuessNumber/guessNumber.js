@@ -8,44 +8,86 @@
  * 06. start the message
  */
 
-const guessField = document.querySelector('#guessField');
+const guessField = document.querySelector("#guessField");
 const submit = document.querySelector("#submitButton");
+const displayNone = document.querySelectorAll('.displayNone');
 const preGuess = document.querySelector(".guesses");
-const remaining = document.querySelector(".lastResult");
+let remaining = document.querySelector(".lastResult");
 const displayResult = document.querySelector(".result");
+const resultContainer = document.querySelector('.resultParas');
 
 //generating the random number
 const randomNumber = Math.floor(Math.random() * 100 + 1);
 console.log(randomNumber);
 
 //collecting the guess number from the user input using click event in submit button
-submit.addEventListener('click', (e) => {
-    e.preventDefault();
-    const guessNumber = parseInt(guessField.value);
-    validateGuess(guessNumber);
-})
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  const guessNumber = parseInt(guessField.value);
+  validateGuess(guessNumber);
+});
 
-function validateGuess(guess){
-    if(isNaN(guess)){
-        return alert('Please provide a valid number');
-    }
-    else if(guess < 1 || guess > 100){
-        return alert('Please provide a number between 1 and 100');
-    }
-
-    checkGuess(guess);
-
-    
+let remainingGuess = parseInt(remaining.innerText);
+function validateGuess(guess) {
+  if (isNaN(guess)) {
+    return alert("Please provide a valid number");
+  } else if (guess < 1 || guess > 100) {
+    return alert("Please provide a number between 1 and 100");
+  } else {
+      previousAndRemaining(guess);
+      checkGuess(guess);   
+  }
 }
 
-function checkGuess(guess){
-    if(guess === randomNumber){
-        return displayResult.innerHTML = `<h2>You guessed it right</h2>`;
-    }
-    else if(guess < randomNumber){
-        return displayResult.innerHTML = `<h2>Sorry, Your guess is low. Try Again</h2>`;
-    }
-    else if(guess > randomNumber){
-        return displayResult.innerHTML = `<h2>Sorry, Your guess is high. Try Again</h2>`;
-    }
+function checkGuess(guess) {
+  if (guess === randomNumber) {
+    displayMessage('You guessed it right.');
+    endGame();
+  } else if (guess < randomNumber) {
+    return displayMessage('Number is Low');
+
+  } else if (guess > randomNumber) {
+    return displayMessage('Number is High');
+
+  }
+}
+
+function previousAndRemaining(guess) {
+  guessField.value = "";
+  preGuess.innerHTML += `${guess} `;
+  --remainingGuess;
+  remaining.innerHTML = `${remainingGuess}`;
+
+  if(remainingGuess === 0){
+    endGame();
+  }
+}
+
+function displayMessage(message){
+    displayResult.innerHTML = `<h2>${message}</h2>`;
+}
+
+function endGame() {
+    guessField.setAttribute('disabled', '');
+    submit.setAttribute('disabled','');
+    displayNone.forEach((element) => {
+        element.style.display = 'none';
+    });
+    const p = document.createElement('p');
+    p.innerHTML = `
+    <input
+          type="submit"
+          id="submitButton"
+          class="submitButton"
+          value="Start Over"
+        />
+    `;
+    resultContainer.appendChild(p);
+    p.addEventListener('click', () => {
+        startGame();
+    })
+}
+
+function startGame(){
+    
 }
