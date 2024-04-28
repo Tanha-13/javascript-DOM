@@ -6,19 +6,19 @@ body{
     margin: 10px auto;
     padding: 10px;
     background-color: #5a5858;
-    color: #fff;
+    color: #ebeaea;
 }
 .game-rules{
     text-align: center;
 }
 .guess-container{
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center; 
     padding: 5px;
     background-color: #212121;
-    color:#fff;
+    color:#ebeaea;
 }
 #guess{
     font-size: 50px;
@@ -37,12 +37,18 @@ body{
     margin-top: 10px;
     width: 100%;
     background-color: #000;
-    color: #fff;
+    color: #ebeaea;
     font-size: 20px;
     padding: 5px 0;
     border-radius: 5px;
     cursor: pointer;
     border: 2px solid #dadada;
 
+}
+
+.guesses{
+    background-color: #5a5858;
+    color: #ebeaea;
+    padding: 7px;
 }
 
